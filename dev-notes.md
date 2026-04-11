@@ -13,5 +13,5 @@ Each note will be sorted by day and time in format DD-MM HH;MM {TITLE}
 [Test Work](/dev-notes/07-04%2021;28%20Test%20Work.md)
 - Testing of AI respones and TTS
 
-[Class work + Project Names](/dev-notes/11-04%2015;43%20Project%20Names%20+%20class%20work.md)
+[Class work + Project Names](/dev-notes/11-04%2015%3B43%20Project%20Names%20%2B%20class%20work.md)
 - What the title says x
