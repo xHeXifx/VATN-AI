@@ -1,0 +1,74 @@
+[
+    {
+        "topic": "contact_frequency",
+        "keywords": ["contact", "tower", "approach", "departure", "center", "frequency", "point"],
+        "guidance": "Read back assigned frequency or facility and callsign.",
+        "template": "[Frequency/facility], [callsign]."
+    },
+    {
+        "topic": "landing_clearance",
+        "keywords": ["cleared", "land", "runway"],
+        "guidance": "Include landing clearance and runway in readback.",
+        "template": "Cleared to land runway [runway], [callsign]."
+    },
+    {
+        "topic": "takeoff_clearance",
+        "keywords": ["cleared", "takeoff", "runway", "winds"],
+        "guidance": "Include takeoff clearance and runway; include wind if issued.",
+        "template": "Cleared for takeoff runway [runway], winds [wind], [callsign]."
+    },
+    {
+        "topic": "squawk_ident",
+        "keywords": ["squawk", "ident", "code"],
+        "guidance": "Read back assigned squawk code; include ident when requested.",
+        "template": "Squawk [code] and ident, [callsign]."
+    },
+    {
+        "topic": "hold_short",
+        "keywords": ["hold", "short", "runway"],
+        "guidance": "Read back hold short instruction with runway.",
+        "template": "Hold short of runway [runway], [callsign]."
+    },
+    {
+        "topic": "line_up_wait",
+        "keywords": ["line", "up", "wait", "runway"],
+        "guidance": "Read back line up and wait with runway.",
+        "template": "Line up and wait runway [runway], [callsign]."
+    },
+    {
+        "topic": "go_around",
+        "keywords": ["go", "around", "climb"],
+        "guidance": "Read back go around and assigned climb.",
+        "template": "Going around, climb to [altitude], [callsign]."
+    },
+    {
+        "topic": "heading_route_altitude_speed",
+        "keywords": ["turn", "heading", "direct", "descend", "climb", "flight", "level", "speed", "qnh"],
+        "guidance": "Read back each assigned control item exactly: heading, speed, altitude/flight level, route/fix, QNH.",
+        "template": "[Instruction elements], [callsign]."
+    },
+    {
+        "topic": "taxi_instruction",
+        "keywords": ["taxi", "stand", "via", "taxiway", "alpha", "bravo"],
+        "guidance": "Read back taxi route and stand/runway assignment.",
+        "template": "Taxi to [destination] via [route], [callsign]."
+    },
+    {
+        "topic": "traffic_advisory",
+        "keywords": ["traffic", "o'clock", "opposite", "miles", "altitude"],
+        "guidance": "For traffic advisories, acknowledge traffic sighting status.",
+        "template": "Traffic in sight, [callsign]."
+    },
+    {
+        "topic": "report_request",
+        "keywords": ["report", "passing", "established", "localizer", "phase"],
+        "guidance": "If ATC requests a report, respond with only the requested report item.",
+        "template": "[Requested report], [callsign]."
+    },
+    {
+        "topic": "radar_contact",
+        "keywords": ["radar", "contact", "continue", "present", "maintain"],
+        "guidance": "Acknowledge instruction content; do not add unrelated items.",
+        "template": "[Continue/maintain instruction], [callsign]."
+    }
+]

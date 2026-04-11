@@ -1,0 +1,110 @@
+[
+    {
+        "testName": "FAA Terms intro"
+    },
+    {
+        "message": "Speedbird 123, winds 110 at 5 knots, runway 12R, cleared to land.",
+        "response": "Cleared to land runway 12R, Speedbird 123.",
+        "processingTime": 4.003105163574219
+    },
+    {
+        "message": "Speedbird 123, report current phase of flight and your squawk code.",
+        "response": "Speedbird 123, squawk 1234 and ident, Speedbird 123.",
+        "processingTime": 4.545757055282593
+    },
+    {
+        "message": "Speedbird 123, reduce speed to 180 knots, descend to 3000 feet, QNH 1013.",
+        "response": "Speedbird 123, descend to three thousand feet, reduce speed to one-eighty knots, Q-N-H one-zero-one-three. Speedbird 123.",
+        "processingTime": 6.271340847015381
+    },
+    {
+        "message": "Speedbird 123, turn right heading 090, vector for ILS approach runway 12R.",
+        "response": "Speedbird 123, turn right heading 090, vector for ILS approach runway 12R.\n\nReadback:\n\n\"Right heading zero-nine-zero, vector for ILS approach runway one-two-R, Speedbird 123.\"",
+        "processingTime": 9.120157957077026
+    },
+    {
+        "message": "Speedbird 123, contact tower on 118.7, good day.",
+        "response": "\"118.7, Speedbird 123.\"",
+        "processingTime": 2.8041601181030273
+    },
+    {
+        "message": "Speedbird 123, go around, I say again go around, climb to 4000 feet.",
+        "response": "\"Going around, climb to 4000 feet, Speedbird 123.\"",
+        "processingTime": 3.6318161487579346
+    },
+    {
+        "message": "Speedbird 123, taxi to stand A12 via taxiway Bravo and Alpha.",
+        "response": "Speedbird 123, taxi to stand A12 via taxiway Bravo and Alpha, Speedbird 123.",
+        "processingTime": 4.372060775756836
+    },
+    {
+        "message": "Speedbird 123, hold short of runway 12R, traffic landing.",
+        "response": "\"Speedbird 123, hold short of runway 12R.\"",
+        "processingTime": 3.884155750274658
+    },
+    {
+        "message": "Speedbird 123, line up and wait runway 12R.",
+        "response": "\"Line up and wait runway 12R, Speedbird 123.\"",
+        "processingTime": 3.974179744720459
+    },
+    {
+        "message": "Speedbird 123, cleared for takeoff runway 12R, winds 120 at 6 knots.",
+        "response": "Cleared for takeoff runway 12R, winds 120 at 6 knots, Speedbird 123.",
+        "processingTime": 5.315241813659668
+    },
+    {
+        "message": "Speedbird 123, climb and maintain flight level 350.",
+        "response": "\"Unable to comply, Speedbird 123.\"",
+        "processingTime": 3.3698558807373047
+    },
+    {
+        "message": "Speedbird 123, expedite climb through 10000 feet.",
+        "response": "\"Expedite climb through 10000 feet, Speedbird 123.\"",
+        "processingTime": 3.671787977218628
+    },
+    {
+        "message": "Speedbird 123, turn left heading 270, proceed direct LAM VOR.",
+        "response": "Speedbird 123, turning left heading two-seven-zero, proceeding direct LAM VOR, squawking one-two-three-four. Speedbird 123.",
+        "processingTime": 6.3123533725738525
+    },
+    {
+        "message": "Speedbird 123, report passing flight level 200.",
+        "response": "\"Flight level 200, Speedbird 123.\"",
+        "processingTime": 3.139995813369751
+    },
+    {
+        "message": "Speedbird 123, maintain present heading, expect further clearance in 2 minutes.",
+        "response": "\"Maintain present heading, Speedbird 123.\"",
+        "processingTime": 2.929903507232666
+    },
+    {
+        "message": "Speedbird 123, descend via STAR, cross waypoint at 6000 feet.",
+        "response": "Speedbird 123, descend via STAR, cross waypoint at 6000 feet, Speedbird 123.",
+        "processingTime": 4.648168325424194
+    },
+    {
+        "message": "Speedbird 123, squawk 4521 and ident.",
+        "response": "\"Squawk 4521 and ident, Speedbird 123.\"",
+        "processingTime": 3.2526333332061768
+    },
+    {
+        "message": "Speedbird 123, radar contact, continue present heading.",
+        "response": "\"Continue present heading, Speedbird 123.\"",
+        "processingTime": 3.3607418537139893
+    },
+    {
+        "message": "Speedbird 123, traffic 12 o'clock, 5 miles, opposite direction, altitude 4000 feet.",
+        "response": "\"Traffic in sight, Speedbird 123.\"",
+        "processingTime": 2.4517476558685303
+    },
+    {
+        "message": "Speedbird 123, report established on the localizer.",
+        "response": "Localizer, Speedbird 123.",
+        "processingTime": 1.9971604347229004
+    },
+    {
+        "averageTime": 4.15281617641449,
+        "samples": 20,
+        "total": 20
+    }
+]
