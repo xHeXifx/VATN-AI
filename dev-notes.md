@@ -15,3 +15,8 @@ Each note will be sorted by day and time in format DD-MM HH;MM {TITLE}
 
 [Class work + Project Names](/dev-notes/11-04%2020%3B02%20Project%20Names%20%2B%20class%20work.md)
 - What the title says x
+
+[Map Travelling + Data | Class Handling rework](/dev-notes/04-05%2002;43%20Map%20Testing.md)
+- Reworked class handling to work better with mapData, we no longer pass many variables as theyre declared in mapData
+- Added logic to have AC follow a pre-determined path from mapData
+- Tried work with UI, no success unfortunatly.

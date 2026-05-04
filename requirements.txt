@@ -3,3 +3,4 @@ openai
 asyncio
 edge_tts
 playsound==1.2.2
+pydub

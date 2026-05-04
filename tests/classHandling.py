@@ -1,26 +1,69 @@
+import json
+import os
+import random
 # testing classes for stuff
 
+def loadMapData():
+    dataPath = os.path.join(os.path.dirname(__file__), "data", "mapData.json")
+    with open(dataPath, 'r') as f:
+        mapData = json.load(f)
+    return mapData
+
 class aircraft:
-    def __init__(self, callsign: str, posx: int, posy: int, yaw: int, altitude: int, phase: str): # Potential phases: [taxitorwy, holding, takeoff, climb, approach, final, taxitogate, parked]
+    def __init__(self, MainScene: scene, callsign: str): # Potential phases: [taxitorwy, holding, takeoff, climb, approach, final, taxitogate, parked]
         self.callsign = callsign
-        self.posx = posx
-        self.posy = posy
-        self.yaw = yaw
-        self.altitude = altitude
-        self.phase = phase
+        occupiedPositions = MainScene.allACPos()
+
+        mapData = loadMapData()
+
+        spawn = random.choice(mapData['spawns'])
+
+        # if what the ACs current position WILL be in occupied | This stops 2 ac from spawning ontop eachother
+        while mapData['routes'][spawn['route']]['waypoints'][0] in occupiedPositions:
+            spawn = random.choice(mapData['spawns'])
+        
+        self.routeName = spawn['route']
+        self.routeData = mapData['routes'][self.routeName]
+        self.currentWaypoint = self.routeData["waypoints"][0]
+        self.currentWaypointIndex = 0
+        
+        self.posx = mapData['waypoints'][self.currentWaypoint]['x']
+        self.posz = mapData['waypoints'][self.currentWaypoint]['z']
+        self.altitude = spawn['altitude']
+        
         self.done = False
         self.onUpdate = Event()
 
     def __repr__(self): # found out this lets you print the object without it saying like <classhandling.object>, pretty cool
-        return f"callsign: {self.callsign} | posx: {self.posx} | posy: {self.posy} | yaw: {self.yaw} | altitude: {self.altitude} | phase: {self.phase} | done: {self.done}"
+        return (
+            f"Aircraft({self.callsign}) | "
+            f"pos=({self.posx},{self.posz}) | "
+            f"altitude={self.altitude} | "
+            f"route={self.routeName} | "
+            f"wp={self.currentWaypoint} "
+            f"({self.routeData['waypoints'].index(self.currentWaypoint)+1}/"
+            f"{len(self.routeData['waypoints'])}) | "
+            f"done={self.done}"
+        )
     
 
-    def update(self, posx: int, posy: int, yaw: int, altitude: int): # TODO: Figure out how i want the next positions to be calculated, will probs be following route but still.
-        self.posx = posx
-        self.posy = posy
-        self.yaw = yaw
-        self.altitude = altitude
-        # self.phase TODO: Want to automatically calculate when a certain phase is active, this is possible when we setup a scene and frame of airport
+    def update(self): 
+        mapData = loadMapData()
+        if self.done == True: # fallback. updateAll doesnt call ac with done true
+            return
+        
+        if self.currentWaypointIndex < len(self.routeData['waypoints']) - 1:
+            self.currentWaypointIndex += 1
+            self.currentWaypoint = self.routeData['waypoints'][self.currentWaypointIndex]
+        else:
+            self.stop()
+
+        nextWp = self.routeData['waypoints'][self.currentWaypointIndex]
+        nextPosX = mapData['waypoints'][nextWp]['x']
+        nextPosZ = mapData['waypoints'][nextWp]['z']
+
+        self.posx = nextPosX
+        self.posz = nextPosZ
 
         self.onUpdate.emit(self) # trigger event each time aircraft changes
 
@@ -57,10 +100,19 @@ class scene: # may be temp unsure yet
 
         self.activeCS.append(aircraftObj.callsign)
     
-    def updateAll(self): # temp while we have no perminant aircraft route
+    def updateAll(self, debug=False): # temp while we have no perminant aircraft route
         for ac in self.aircrafts:
-            ac.update(ac.posx + 1, ac.posy + 1, ac.yaw + 1, ac.altitude)
+            if ac.done != True:
+                ac.update()
+                if debug == True: print(ac)
+            else:
+                self.aircrafts.remove(ac)
 
+    def allACPos(self):
+        positions = []
+        for ac in self.aircrafts:
+            positions.append(ac.currentWaypoint)
+        return positions
 
 class Event: # gonna try get a tick system functioning in this
     def __init__(self):

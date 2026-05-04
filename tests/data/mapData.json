@@ -1,0 +1,115 @@
+{
+  "map": {
+    "width": 100,
+    "height": 100
+  },
+
+  "waypoints": {
+    "N1": { "x": 50, "z": 0 },
+    "N2": { "x": 50, "z": 20 },
+    "N3": { "x": 50, "z": 40 },
+
+    "S1": { "x": 50, "z": 100 },
+    "S2": { "x": 50, "z": 80 },
+    "S3": { "x": 50, "z": 60 },
+
+    "W1": { "x": 0, "z": 50 },
+    "W2": { "x": 20, "z": 50 },
+    "W3": { "x": 40, "z": 50 },
+
+    "E1": { "x": 100, "z": 50 },
+    "E2": { "x": 80, "z": 50 },
+    "E3": { "x": 60, "z": 50 },
+
+    "CENTER": { "x": 50, "z": 50 },
+
+    "HOLD_N": { "x": 60, "z": 15 },
+    "HOLD_S": { "x": 40, "z": 85 },
+    "HOLD_W": { "x": 15, "z": 40 },
+    "HOLD_E": { "x": 85, "z": 60 },
+
+    "RWY01": { "x": 45, "z": 10 },
+    "RWY19": { "x": 55, "z": 90 },
+
+    "APP_A": { "x": 50, "z": 30 },
+    "APP_B": { "x": 50, "z": 70 }
+  },
+
+  "routes": {
+    "arrival_north": {
+      "type": "arrival",
+      "waypoints": ["N1", "N2", "N3", "APP_A", "RWY01"]
+    },
+
+    "arrival_south": {
+      "type": "arrival",
+      "waypoints": ["S1", "S2", "S3", "APP_B", "RWY19"]
+    },
+
+    "arrival_west": {
+      "type": "arrival",
+      "waypoints": ["W1", "W2", "W3", "CENTER", "APP_A", "RWY01"]
+    },
+
+    "arrival_east": {
+      "type": "arrival",
+      "waypoints": ["E1", "E2", "E3", "CENTER", "APP_B", "RWY19"]
+    },
+
+    "departure_north": {
+      "type": "departure",
+      "waypoints": ["RWY01", "APP_A", "N3", "N2", "N1"]
+    },
+
+    "departure_south": {
+      "type": "departure",
+      "waypoints": ["RWY19", "APP_B", "S3", "S2", "S1"]
+    },
+
+    "departure_west": {
+      "type": "departure",
+      "waypoints": ["RWY01", "APP_A", "CENTER", "W3", "W2", "W1"]
+    },
+
+    "departure_east": {
+      "type": "departure",
+      "waypoints": ["RWY19", "APP_B", "CENTER", "E3", "E2", "E1"]
+    },
+
+    "hold_patterns": {
+      "type": "holding",
+      "waypoints": ["HOLD_N", "HOLD_E", "HOLD_S", "HOLD_W", "HOLD_N"]
+    }
+  },
+
+  "spawns": [
+    {
+      "route": "arrival_north",
+      "altitude": 3000
+    },
+    {
+      "route": "arrival_south",
+      "altitude": 3200
+    },
+    {
+      "route": "arrival_west",
+      "altitude": 2800
+    },
+    {
+      "route": "arrival_east",
+      "altitude": 3500
+    },
+    {
+      "route": "departure_north",
+      "altitude": 0
+    },
+    {
+      "route": "departure_south",
+      "altitude": 0
+    },
+    {
+      "route": "hold_patterns",
+      "altitude": 4000
+    }
+  ]
+}

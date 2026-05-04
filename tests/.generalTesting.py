@@ -1,3 +1,5 @@
+import json
+import os
 # This file will contain general tests for random stuff
 # i will try keep every test i do in here in functions
 
@@ -79,5 +81,18 @@ def TEST_noVarAircraft():
             ac.update(2, 3, 4, 0)
             break
     
+def TEST_newAircraftClass():
+    # all other aircrafts are now broken as theyre missing parameters
+    from classHandling import aircraft
+    dataPath = os.path.join(os.path.dirname(__file__), "data", "mapData.json")
+    with open(dataPath, 'r') as f:
+        data = json.load(f)
+    
+    routeData = data['routes']['arrival_west']
 
-TEST_sceneClassWithAircraft()
+    testAircraft = aircraft("ezy123", 0, 0, 0, 0, 0, routeData, 'arrival_west')
+    print(testAircraft) # callsign: ezy123 | posx: 0 | posz: 0 | posy: 0 | yaw: 0 | altitude: 0 | routeName: arrival_west | currentWaypoint: W1 |done: False
+
+
+
+TEST_newAircraftClass()
