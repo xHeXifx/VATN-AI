@@ -17,6 +17,16 @@
 <br>
 
 ### This readme will probs stay empty until i finish this project or at least get further into it, for now read the [dev logs](/dev-notes.md)
+
+## What's Complete (Not final)
+This list does not contain everything that will be in this app, just a list to keep track
+- [x] Aircraft + Scene classes
+- [x] Update / Tick System
+- [x] TTS Readback
+- [x] Basic pre-defined routes
+- [ ] User Inputs (To control AC)
+- [ ] GUI
+
 To summarise, this program is a replica of the VATSIM controller app that replaces the "real-world" (sim) pilots with AI.  
 <sub><sup>This is just a fun project i do not think AI is better than people in any context...</sup></sub>
 
