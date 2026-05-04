@@ -4,7 +4,7 @@ import asyncio
 
 CS_STARTS = ["EZY", "BAW", "RYN", "TOM"] # random callsign starts
 
-mainScene = scene(0, 0, [], [])
+mainScene = scene()
 
 def updateCheck(ac):
     print(f"update check called: {ac}")
@@ -19,9 +19,9 @@ def createAircraft(): # for this test we assume the scene is 100x100 in size
         callsign = f"{random.choice(CS_STARTS)}{random.randint(100,999)}"
 
     if random.choice([1, 2]) == 1: # on ground
-        ac = aircraft(callsign, random.randint(0, 100), random.randint(0, 100), random.randint(0, 360), 0, "parked")
+        ac = aircraft(mainScene, callsign)
     else:
-        ac = aircraft(callsign, random.randint(0, 100), random.randint(0, 100), random.randint(0, 360), 3000, "approach")
+        ac = aircraft(mainScene, callsign)
     ac.onUpdate.subscribe(updateCheck)
     mainScene.addAircraftToScene(ac)
 

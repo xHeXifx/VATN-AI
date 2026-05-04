@@ -81,11 +81,11 @@ class aircraft:
 
 
 class scene: # may be temp unsure yet
-    def __init__(self, groundedNum: int, inAirNum: int, aircraftObj: list[aircraft], activeCallsigns: list[str]):
-        self.grounded = groundedNum
-        self.inAir = inAirNum
-        self.aircrafts = aircraftObj
-        self.activeCS = activeCallsigns
+    def __init__(self):
+        self.grounded = 0
+        self.inAir = 0
+        self.aircrafts = []
+        self.activeCS = []
 
     def __repr__(self):
         return f"Grounded: {self.grounded} | In Air: {self.inAir} | Total Aircraft: {len(self.aircrafts)} | Active Callsigns: {self.activeCS}"

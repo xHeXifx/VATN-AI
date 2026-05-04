@@ -6,7 +6,7 @@ import asyncio
 
 CS_STARTS = ["EZY", "BAW", "RYN", "TOM"] # random callsign starts
 
-mainScene = scene(0, 0, [], [])
+mainScene = scene()
 
 def updateCheck(ac):
     print(f"update check called: {ac}")

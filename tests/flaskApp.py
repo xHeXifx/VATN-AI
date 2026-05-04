@@ -11,7 +11,7 @@ CS_STARTS = ["EZY", "BAW", "RYN", "TOM"]
 app = Flask(__name__)
 mapData = loadMapData()
 
-mainScene = scene(0, 0, [], [])
+mainScene = scene()
 mainScene.addAircraftToScene(aircraft(mainScene, f"{random.choice(CS_STARTS)}{random.randint(100,999)}"))
 mainScene.addAircraftToScene(aircraft(mainScene, f"{random.choice(CS_STARTS)}{random.randint(100,999)}"))
 mainScene.addAircraftToScene(aircraft(mainScene, f"{random.choice(CS_STARTS)}{random.randint(100,999)}"))
